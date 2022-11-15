@@ -1,4 +1,3 @@
-
 // 1) Declarar una clase Usuario
 
 // 2) Hacer que Usuario cuente con los siguientes atributos:
@@ -44,41 +43,34 @@ class usuario {
         return `Nombre completo: ${this.nombre} ${this.apellido}`
     };
 
-    addMascota() {
-        let nuevaMascota = 'Firulais'
-        return `${this.mascotas.push(nuevaMascota)} Se agrego la nueva mascota del usuario: ${this.mascotas}`
+ 
+    addMascota(nuevaMascota) {
+       this.mascotas.push (nuevaMascota);
+        return `Se agrego la nueva mascota del usuario: ${this.mascotas}`
     }
 
     countMascotas() {
         return `Esta es la cantidad de Mascotas que tiene el usuario: ${this.mascotas.push()}`
     }
 
-    addBook () {
-        let agregarLibro = {
-            nombre: 'haway', 
-            autor: 'julio' 
-        }
-        return `Se agrego el nuevo libro: ${this.libros.push(agregarLibro)}`
+    addBook (nuevoLibro) {
+        this.libros.push (nuevoLibro)
+        return this.libros
     }
 
     getBookNames() {
-        return this.libros
+        let librosDelUsuario = this.libros.map (nombreDeLosLibros => nombreDeLosLibros.nombre)
+        return librosDelUsuario
     }
 
 
 };
 
-const nuevoUsuario = new usuario ('julio', 'morales', [{nombre: 'red rebel', autor: 'carlos'}], ['perro', 'gato']);
+const nuevoUsuario = new usuario ('Gabriel', 'Martinez', [{nombre: 'Red rebel', autor: 'Carlos Camacho'},{nombre: 'La casa de papel', autor: 'Julio Cerro'}], ['Terri', 'Santi']);
 
-    // console.log(nuevoUsuario.getFullName());
-    // console.log(nuevoUsuario.getFullName());
-    // console.log(nuevoUsuario.addMascota());
-    // console.log(nuevoUsuario.countMascotas());
-    // console.log(nuevoUsuario.addBook());
-    // console.log(nuevoUsuario.getBookNames());
+    console.log(nuevoUsuario.getFullName());
+    console.log(nuevoUsuario.addMascota('Titan'));
+    console.log(nuevoUsuario.countMascotas());
+    console.log(nuevoUsuario.addBook({nombre: 'La caminata infinita', autor:'Marcos Marchesitt'}));
+    console.log(nuevoUsuario.getBookNames());
 
-
-
-
-// console.log(nuevoUsuario.nombre)
-// console.log(nuevoUsuario.libros)
